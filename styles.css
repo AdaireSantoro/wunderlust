@@ -1,0 +1,896 @@
+/* 
+    Adaire Santoro
+*/
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* This is where my code begins*/
+/* Mobile Small */
+
+body {
+	font-family: 'Motserrat', sans-serif;
+	background-color: transparent;
+	margin: 0;
+	padding: 0;
+	height: 100vh;
+}
+
+header {
+	background-color: #55bcd5;
+	background-image: linear-gradient(#55bcd5, white);
+	color: #000000;
+	padding: 10px;
+	justify-content: center;
+	text-align: center;
+
+}
+
+
+header h1 {
+	font-family:'Molle';
+	color:#000000;
+	font-size: 30px;
+	text-align: center;
+}
+
+header p {
+	font-family:'Montserrat';
+}
+
+nav a {
+	display: block;
+	padding: 1rem;
+	text-decoration: none;
+	text-align: center;
+	background-color: #55bcd5;
+	color: white;
+	font-weight: bold;
+	margin: 0.5rem auto;
+	border-radius: 0.5rem;
+	width: calc(100% - 2rem);
+	max-width: 350px;
+}
+
+nav ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+#menu-toggle {
+	display: block;
+	position: relative;
+	top: 30px;
+	left: 50px;
+	right: 10px;  
+	z-index: 1;  
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	 -ms-user-select: none;
+		 user-select: none; 
+  }
+  
+  #menu-toggle a {
+	text-decoration: none;
+	color: #232323;
+	-webkit-transition: color 0.3s ease;
+	-o-transition: color 0.3s ease;
+	transition: color 0.3s ease;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+  }
+  
+  #menu-toggle a:hover {
+	color: #4f7794;
+  }
+  
+  
+  /* The hamburger button hidden inside an input element */
+  #menu-toggle input {
+	display: block;
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	top: -7px;
+	left: -5px;  
+	padding: 0;
+	cursor: pointer;  
+	opacity: 0; /* hide this */
+	z-index: 2; /* and place it over the hamburger */  
+	-webkit-touch-callout: none;
+  }
+  
+  #menu-toggle label {
+	position: relative;
+	display: block;
+	width: 30px;
+	height: 30px;
+  }
+  #menu-toggle label span {
+	display: none;
+  }
+  
+  /*
+   * Hamburger
+   */
+  #menu-toggle label div {
+	display: block;
+	width: 30px;
+	height: 2px;
+	margin-bottom: 6px;
+	position: relative;
+	background: #cdcdcd;
+	border-radius: 3px;  
+	z-index: 1;  
+	-webkit-transform-origin: 4px 0px;  
+		-ms-transform-origin: 4px 0px;  
+			transform-origin: 4px 0px;
+	-webkit-transition: all 0.3s ease;
+	-o-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+  }
+  
+  #menu-toggle label div:first-child {
+	-webkit-transform-origin: 0% 100%;
+		-ms-transform-origin: 0% 100%;
+			transform-origin: 0% 100%;
+  }
+  
+  #menu-toggle label div:nth-child(2) {
+	  -webkit-transform-origin: 0% 0%;
+		-ms-transform-origin: 0% 0%;
+			transform-origin: 0% 0%;
+  }
+  
+  /* 
+   * Change the color of the hamburger when toggled
+   */
+  #menu-toggle input:checked + label div {
+	background: #232323;
+  }
+  
+  /*
+   * Use absolute positioning to place the menu off-screen
+   */
+  #menu {
+	position: absolute;
+	width: 300px;
+	margin: -100px 0 0 -50px;
+	padding: 50px;
+	padding-top: 125px;
+	background: #ededed;
+	list-style-type: none;
+	/* Hide the menu off-screen to the left */
+	left: -100%;
+	-webkit-transition: left 0.3s ease;
+	-o-transition: left 0.3s ease;
+	transition: left 0.3s ease; 
+  }
+  
+  #menu li {
+	padding: 10px 0;
+	font-size: 22px;
+  }
+  
+  /*
+   * Slide the menu in from left when the input is checked
+   */
+  #menu-toggle input:checked ~ ul {
+	left: 0;
+  }
+
+  #menu-toggle {
+    display: block;
+}
+
+#menu-toggle input {
+    display: none; /* hide the checkbox */
+}
+
+#menu-toggle label {
+    background-color: #f6d64a;
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+}
+
+#menu-toggle ul {
+    display: none; /* hide the menu */
+    list-style-type: none;
+    padding: 0;
+}
+
+#menu-toggle input:checked ~ ul {
+    display: block; /* show the menu when the checkbox is checked */
+}
+
+#skip {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}
+
+#toggle {
+    display: none; /* hide the checkbox */
+}
+
+label {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    display: none; /* hide the menu */
+}
+
+#toggle:checked ~ ul {
+    display: block; /* show the menu when the checkbox is checked */
+}
+
+.sr-only {
+	display: none;
+}
+
+#main-content {
+	display: grid;
+}
+
+/*INTRO SECTION*/
+
+#intro h2 {
+	font-family:'Molle';
+	font-size:24px;
+	text-align: center;
+}
+
+#intro p {
+	font-family:'Montserrat';
+	text-align: center;
+}
+
+/*IMAGE SECTION*/
+
+#img-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+#img-grid img {
+    /* Add your styles for the images here */
+    width: 100%;
+    height: auto;
+	margin: auto;
+}
+
+/*PLAN SECTION*/
+
+#plan {
+    font-family:'Montserrat';
+	background-color:#f6d64a;
+}
+
+#plan h3 {
+	font-family:'Molle';
+	font-size:24px;
+	text-align: center;
+	justify-content: center;
+}
+
+#plan section {
+	background-color: #55bcd5;
+	display: flex;
+	width: 90%;
+	margin: 10px auto;
+	border-radius: 10px;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	border: 3px solid white;
+	padding: 10px;
+}
+
+#plan h4 {
+	font-family:'Montserrat';
+	font-size: 20px;
+	font-weight: bold;
+}
+
+#plan img {
+	width: 30px;
+	height: auto;
+	padding: 10px;
+	justify-content: center;
+}
+
+/*TESTIMONIALS SECTION*/
+
+#testimonials {
+	font-family:'Montserrat';
+	background-color: #ffffff;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+
+
+#testimonials h3 {
+	font-family:'Molle';
+	font-size:24px;
+	text-align: center;
+	justify-content: center;
+}
+
+#testimonials section {
+	background-color: #ffffff;
+	display: flex;
+	width: 90%;
+	margin: 10px auto;
+	border-radius: 10px;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	border: 3px solid white;
+	padding: 10px;
+}
+
+#testimonials h4 {
+	font-family:'Montserrat';
+	font-size:22px;
+	font-weight: bold;
+	padding: 5px;
+}
+
+#testimonials p {
+	font-family:'Montserrat';
+	line-height: 1.3;
+}
+
+#testimonials q {
+	font-style: italic;
+	font-weight: 300;
+	line-height:1.4;
+}
+
+/*ABOUT SECTION */
+
+#about {
+	font-family:'Montserrat';
+	background-color:#499bd2;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#about h3 {
+	font-family:'Molle';
+	font-size: 24px;
+	text-align: center;
+}
+
+#about h4 {
+	font-family:'Montserrat';
+	font-size: 20px;
+	font-weight: 550;
+	text-align: center;
+}
+
+#about > div {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 20px;
+	justify-content: center;
+
+}
+
+#about img {
+	width: 50px;
+	height: auto;
+	padding: 20px;
+	justify-content: center;
+}
+
+/*CONTACT SECTION*/
+
+#contact {
+text-align: left;
+padding: 10px;
+text-align: left;
+}
+
+#contact h3 {
+	font-family:'Molle';
+	font-size: 24px;
+
+}
+
+#contact h3 span {
+	font-family:'Montserrat';
+	padding: 5px;
+	margin: 10px;
+	font-size: 18px;
+
+}
+
+form {
+	font-family:'Montserrat';
+	margin: auto;
+	width: 50%;
+	padding: 10px;
+	color:#000000;
+	background-color: transparent;
+	text-align: left;
+}
+
+#names {
+	color: #000000;
+	background-color: transparent;
+	text-align: left;
+}
+
+.required {
+	color: #9b26b0;
+	background-color: transparent;
+	text-align: left;
+}
+
+label {
+	display: block;
+	margin: 10px 0;
+	color:#000000;
+	background-color: transparent;
+	text-align: left;
+}
+
+input[type="text"], input[type="email"], input[type="tel"] {
+	display: block;
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	box-sizing: border-box;
+	border: 2px solid #9b26b0;
+	border-radius: 4px;
+	background-color: transparent;
+	text-align: left;
+	
+}
+
+/*SELECT SECTION*/
+
+
+.span radio-inputs {
+	background-color: #9b26b0;
+}
+
+#selects {
+	color: #9b26b0;
+	background-color: transparent;
+	text-align: left;
+}
+
+select {
+	/*A reset of styles, including removing the default dropdown arrow*/
+	appearance: none;
+	/* Additional resets for further consistency*/
+	background-color: transparent;
+	border: none;
+	padding: 0 1em 0 0;
+	margin: 0;
+	width: 100%;
+	font-family: inherit;
+	font-size: inherit;
+	cursor: inherit;
+	line-height: inherit;
+  }
+
+#selects > div {
+	display: block;
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	box-sizing: border-box;
+	border: 2px solid #9b26b0;
+	border-radius: 4px;
+	background-color: transparent;
+	text-align: left;
+}
+
+.required {
+    color: #9b26b0;
+}
+
+/* Style for radio-input class */
+.radio-input input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+}
+
+.radio-input .radio-control {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 2px solid purple;
+    position: relative;
+}
+
+.radio-input input[type="radio"]:checked ~ .radio-control::before {
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: purple;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Style for label element */
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.focus {
+	background-color: #f8f9fa;
+    color: #495057;
+}
+
+/* Style for required class */
+.required {
+    color: #9b26b0;
+}
+
+/* Style for custom-select class */
+.custom-select {
+    width: 200px;
+    height: 35px;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+}
+
+/* Style for select element */
+.custom-select select {
+    width: 100%;
+    height: 100%;
+    border: none;
+    padding: 5px;
+    font-size: 1rem;
+    color: #495057;
+    background-color: transparent;
+}
+
+/* Style for label element */
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+/* Style for required class */
+.required {
+    color: #9b26b0;
+}
+
+/* Style for custom-select class */
+.custom-select {
+    width: 200px;
+    height: 35px;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+}
+
+/* Style for select element */
+.custom-select select {
+    width: 100%;
+    height: 100%;
+    border: none;
+    padding: 5px;
+    font-size: 1rem;
+    color: #495057;
+    background-color: transparent;
+}
+
+/* Style for submit button */
+#mySubmit {
+    display: block;
+    width: 100px;
+    height: 40px;
+    background-color: purple;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin: 0 auto;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#mySubmit:hover {
+    background-color: #800080;
+}
+
+/* Style for label element */
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+/* Footer section */
+footer {
+	background-color: #eaeaea;
+	text-align: center;
+	padding: 50px;
+}
+
+footer p, footer a {
+	color: #000000;
+	margin: 0 10px;
+}
+
+
+
+
+
+
+/* medium devices (600x and up) */
+@media (min-width: 600px) {
+    #menu-toggle {
+        display: block;
+        justify-content: space-between;
+		position: relative;
+		z-index: 1;
+    }
+
+    #menu-toggle label {
+        display: none; /* hide the menu label */
+    }
+
+    #menu-toggle ul {
+        display: flex; /* show the menu */
+		height: 20px;
+		color: #f6d64a;
+    }
+
+/* Nav Styles*/
+	nav {
+		max-width:599px;
+		margin: 0 auto;
+	}
+
+	nav ul {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		gap: 1rem;
+		height: 20px;
+	}
+
+	nav ul li {
+		flex-basis: calc(50% - 10px);
+	}
+
+	#img-grid {
+		display: grid;
+		grid-template-rows: auto;
+		gap: 10px;
+	}
+
+	#img-grid img {
+		width: 100%;
+		height: auto;
+	}
+
+	#img-grid picture {
+		grid-column: span 2;
+	}
+
+	#plan {
+		display: grid;
+		grid-template-rows: 1fr 1fr;
+		justify-items: center;
+		align-items: center;
+	}
+
+	#plan h3 {
+		text-align: center;
+	}
+
+	#plan section {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		width: 60%;
+		margin: 10px auto;
+		border-radius: 5px;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		border: 3px solid white;
+		padding: 10px;
+	}
+	
+	#plan h4 {
+		font-family:'Montserrat';
+		font-size: 20px;
+		font-weight: bold;
+	}
+	
+	#plan img {
+		width: 100px;
+		height: auto;
+		padding: 10px;
+		display: block;
+		border-radius: 0;
+		margin: 0 auto;
+	}
+	
+	#testimonials section {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr 1fr);
+		grid-template-rows: auto;
+	}
+	
+	#about > div {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.radio-label {
+		display: flex;
+		flex-wrap: nowrap;
+		justify-content: space-between;
+	}
+
+	#mySubmit {
+		display: flex;
+		flex-wrap: nowrap;
+	}
+}
+/*
+    Web View
+*/
+@media (min-width: 1200px) {
+	nav {
+		margin-top: 1em;
+		display: flex;
+		padding: 10px;
+	}
+	nav ul {
+		display: flex;
+	}
+
+
+	#img-grid {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: auto;
+		gap: 10px;
+	}
+
+	#img-grid img {
+		width: 100%;
+		height: auto;
+		display: flex;
+	}
+
+	#img-grid picture {
+		grid-column: span 2;
+	}
+
+	#plan {
+		display: flex;
+		flex-wrap: wrap;
+		min-width: 50%;
+		margin: 0;
+		max-width: 50%;
+	}
+
+	#plan h3 {
+		text-align: center;
+	}
+
+	#plan section {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		width: 60%;
+		margin: 10px auto;
+		border-radius: 5px;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		border: 3px solid white;
+		padding: 10px;
+	}
+
+
+	#plan img {
+		width: 100px;
+		height: auto;
+		padding: 10px;
+		display: block;
+		border-radius: 0;
+		margin: 0 auto;
+	}
+
+	#testimonials section {
+		display: flex;
+		padding: 2rem;
+	}
+
+	#about > div {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.radio-label {
+		display: flex;
+		flex-wrap: nowrap;
+		justify-content: space-between;
+	}
+
+	#mySubmit {
+		display: flex;
+		flex-wrap: nowrap;
+	}
+}
